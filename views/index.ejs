@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <h1><%= title %></h1>
+  <section>
+    <form action="api/items" method="get">
+      <input type="text" name="search" placeholder="Search">
+      <button type="submit">Buscar</button>
+    </form>
+  </section>
+
+</body>
+
+</html>
