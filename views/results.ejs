@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<script>
+  var row = <%-JSON.stringify(data)%>
+  console.log(row);
+</script>
 
 <head>
   <title>
@@ -10,7 +14,19 @@
 
 <body>
   <h1><a href="/api/items/1" id="1"><%= title %></a></h1>
-  <p><%= data%></p>
+  <p>
+    <!--<%- JSON.stringify(data.results) %>-->
+  </p>
+  <table>
+<% for(var i=0; i < data.results.length; i++) { %>
+   <tr>
+     <td><a href="/api/items/<%= data.results[i].id %>" id="1"><%= data.results[i].title %></a></td>
+     <td><%= data.results[i].price %></td>
+   </tr>
+<% } %>
+</table>
+
+</table>
 </body>
 
 </html>

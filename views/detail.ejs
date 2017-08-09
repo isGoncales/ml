@@ -6,10 +6,41 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
-<body>
+<body onload="loadDescription('<%= data.id %>');">
+
+  </script>
   <h1><%= title %></h1>
+  <p>
+    <%= data.id %>
+  </p>
+  <p>
+    <%= data.initial_quantity %>
+  </p>
+  <p>
+    <%= data.price %>
+  </p>
+  <p><img src="<%= data.thumbnail %>" /></p>
+  <div id="description"></div>
 </body>
+<script language="javascript">
+  function loadDescription(id) {
+    $.ajax({
+      url: 'https://api.mercadolibre.com/items/' + id + '/description',
+      type: 'GET',
+      success: function(description) {
+        if (description.text == "") {
+          $('#description').html(description.plain_text);
+        } else {
+          $('#description').html(description.text);
+        }
+
+      }
+    });
+  }
+</script>
 
 </html>
