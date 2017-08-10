@@ -25,7 +25,6 @@ router.get('/items', function(req, res, next) {
 
 router.get('/items/:id', function(req, res, next) {
   var url = 'https://api.mercadolibre.com/items/' + req.params.id;
-  console.log(url);
   https.get(url, (response) => {
     var data = "";
     response.on('data', (d) => {

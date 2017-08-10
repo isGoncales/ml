@@ -22,7 +22,7 @@
     <![endif]-->
 </head>
 
-<body class="bodyGrey" onload="loadDescription('<%= data.id %>');">
+<body class="bg-grey" onload="loadDescription('<%= data.id %>');">
 
   <div class="navbar navbar-inverse navbar-static-top" role="navigation">
 
@@ -84,7 +84,8 @@
 
         </div>
       </div>
-      <div id="description"></div>
+      <p class="h3">Descrição do produto</p>
+      <div class="col-xs-9 col-md-9" id="description"></div>
     </div>
 
 
@@ -94,7 +95,7 @@
   <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-  <script src="javascripts/bootstrap.min.js"></script>
+  <script src="../public/javascripts/bootstrap.min.js"></script>
 </body>
 <script language="javascript">
   function loadDescription(id) {
